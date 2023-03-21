@@ -1,0 +1,49 @@
+.burger__ingredients {
+  max-width: 600px;
+}
+
+.ingredients__categories {
+  overflow-y: scroll;
+  max-height: calc(100vh - 365px);
+}
+
+.ingredients__category {
+}
+
+.ingredients__category h2 {
+}
+
+.ingredients__items {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.ingredients__item {
+  width: 50%;
+  cursor: pointer;
+}
+
+.ingredients__image {
+  max-height: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ingredients__image img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.ingredients__price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ingredients__name {
+  text-align: center;
+}
