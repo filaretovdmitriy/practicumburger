@@ -16,11 +16,15 @@ function AppHeader(props) {
           <div className={styles.header__nav}>
             <div className={styles.header__link + " p-5 mr-2"}>
               <BurgerIcon type="primary" />
-              <span className="pl-2">Конструктор</span>
+              <a href="#" className="pl-2">
+                Конструктор
+              </a>
             </div>
             <div className={styles.header__link + " p-5"}>
               <ListIcon type="secondary" />
-              <span className="pl-2">Лента заказов</span>
+              <a href="#" className="pl-2">
+                Лента заказов
+              </a>
             </div>
           </div>
           <div className={styles.logo}>
@@ -29,7 +33,9 @@ function AppHeader(props) {
           <div className={styles.header__profile}>
             <div className={styles.header__link + " p-5"}>
               <ProfileIcon type="secondary" />
-              <span className="pl-2">Личный кабинет</span>
+              <a href="#" className="pl-2">
+                Личный кабинет
+              </a>
             </div>
           </div>
         </div>

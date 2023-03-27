@@ -30,8 +30,10 @@ function App() {
       const res = await fetch(url).catch((error) => {
         console.log("Ошибка в API: " + error);
       });
-      const data = await res.json();
-      setState({ ...state, ingredients: data.data, loading: false });
+      if (res.ok) {
+        const data = await res.json();
+        setState({ ...state, ingredients: data.data, loading: false });
+      } else console.log("Неверный код ответа от сервера  " + res.status);
     };
     getIngredients();
   }, []);

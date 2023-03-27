@@ -21,3 +21,8 @@
   justify-content: flex-start;
   align-items: center;
 }
+
+.header__link a {
+  color: #fff;
+  text-decoration: none;
+}
