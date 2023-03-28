@@ -1,0 +1,28 @@
+.constructor__elements {
+  max-width: 600px;
+}
+
+.constructor__elements__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.constructor__element__nodrag {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.constructor__elements__total {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.constructor__elements__ingredients {
+  max-height: 440px;
+  overflow-y: scroll;
+  margin-bottom: 10px;
+}
