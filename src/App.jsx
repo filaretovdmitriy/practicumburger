@@ -38,12 +38,6 @@ function App() {
     getIngredients();
   }, []);
 
-  const handleKeyPress = (event) => {
-    if (event.key === "Escape") {
-      setState({ ...state, showOrderPopup: false });
-    }
-  };
-
   const handleMouseDown = () => {
     setState({ ...state, showOrderPopup: false });
   };
@@ -65,42 +59,41 @@ function App() {
       <AppHeader />
       <main>
         {!state.loading && (
-          <BurgerConstructor
-            setIngridient={(i) => {}}
-            ingredients={state.ingredients}
-            showIngredient={(ing) => setState({ ...state, ingredient: ing })}
-            showIngredientModal={showIngredientModal}
-          />
-        )}
-        {!state.loading && (
-          <BurgerIngredients
-            ingredients={state.ingredients}
-            showOrderModal={showOrderModal}
-            activeIngredient={state.activeIngredient}
-          />
+          <>
+            <BurgerConstructor
+              setIngridient={(i) => {}}
+              ingredients={state.ingredients}
+              showIngredient={(ing) => setState({ ...state, ingredient: ing })}
+              showIngredientModal={showIngredientModal}
+            />
+            <BurgerIngredients
+              ingredients={state.ingredients}
+              showOrderModal={showOrderModal}
+              activeIngredient={state.activeIngredient}
+            />
+          </>
         )}
       </main>
-      <Modal
-        toggleopen={state.showOrderPopup}
-        onClose={() => setState({ ...state, showOrderPopup: false })}
-        handleKeyPress={handleKeyPress}
-        handleMouseDown={handleMouseDown}
-        title={null}
-      >
-        <OrderDetails />
-      </Modal>
-
-      <Modal
-        toggleopen={state.showIngredientPopup}
-        onClose={() => setState({ ...state, showIngredientPopup: false })}
-        handleKeyPress={handleKeyPress}
-        handleMouseDown={handleMouseDown}
-        title="Детали ингридиента"
-      >
-        <IngredientDetails ingredientDetail={state.ingredientDetail} />
-      </Modal>
-
-      <div id="react-modals"></div>
+      {state.showOrderPopup && (
+        <Modal
+          toggleopen={state.showOrderPopup}
+          onClose={() => setState({ ...state, showOrderPopup: false })}
+          handleMouseDown={handleMouseDown}
+          title={null}
+        >
+          <OrderDetails />
+        </Modal>
+      )}
+      {state.showIngredientPopup && (
+        <Modal
+          toggleopen={state.showIngredientPopup}
+          onClose={() => setState({ ...state, showIngredientPopup: false })}
+          handleMouseDown={handleMouseDown}
+          title="Детали ингридиента"
+        >
+          <IngredientDetails ingredientDetail={state.ingredientDetail} />
+        </Modal>
+      )}
     </div>
   );
 }

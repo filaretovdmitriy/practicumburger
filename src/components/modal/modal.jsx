@@ -20,7 +20,7 @@ function Modal(props) {
     toggleOpen();
   }, [props.toggleopen]);
 
-  const node = document.createElement("div");
+  const node = document.getElementById("react-modals");
   const overlayRef = createRef(null);
 
   const handleKeyPress = (event) => {
@@ -32,7 +32,7 @@ function Modal(props) {
       overlayRef.current.focus();
     }
   }, [overlayRef]);
-  document.body.appendChild(node);
+
   if (!state.modalopen) return null;
   return ReactDOM.createPortal(
     <>
