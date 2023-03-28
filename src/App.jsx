@@ -38,10 +38,6 @@ function App() {
     getIngredients();
   }, []);
 
-  const handleMouseDown = () => {
-    setState({ ...state, showOrderPopup: false });
-  };
-
   const showOrderModal = () => {
     setState({ ...state, showOrderPopup: true });
   };
@@ -78,7 +74,6 @@ function App() {
         <Modal
           toggleopen={state.showOrderPopup}
           onClose={() => setState({ ...state, showOrderPopup: false })}
-          handleMouseDown={handleMouseDown}
           title={null}
         >
           <OrderDetails />
@@ -88,7 +83,6 @@ function App() {
         <Modal
           toggleopen={state.showIngredientPopup}
           onClose={() => setState({ ...state, showIngredientPopup: false })}
-          handleMouseDown={handleMouseDown}
           title="Детали ингридиента"
         >
           <IngredientDetails ingredientDetail={state.ingredientDetail} />
