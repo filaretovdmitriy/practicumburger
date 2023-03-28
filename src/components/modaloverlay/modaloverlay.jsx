@@ -13,8 +13,8 @@ const Modaloverlay = forwardRef((props, ref) => {
 });
 
 Modaloverlay.propTypes = {
-  handleKeyPress: PropTypes.func,
-  onMouseDown: PropTypes.func,
+  handleKeyPress: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default Modaloverlay;

@@ -59,10 +59,9 @@ function Modal(props) {
 }
 
 Modal.propTypes = {
-  toggleopen: PropTypes.bool,
-  onClose: PropTypes.func,
-  title: PropTypes.string,
-  children: PropTypes.any,
+  toggleopen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  children: PropTypes.any.isRequired,
 };
 
 export default Modal;

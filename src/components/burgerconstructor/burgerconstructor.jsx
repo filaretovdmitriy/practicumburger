@@ -124,15 +124,15 @@ function BurgerConstructor(props) {
 }
 
 BurgerConstructor.propTypes = {
-  ingredients: PropTypes.arrayOf(ingredientPropTypes),
-  showIngredientModal: PropTypes.func,
-  setIngridient: PropTypes.func,
+  ingredients: PropTypes.arrayOf(ingredientPropTypes).isRequired,
+  showIngredientModal: PropTypes.func.isRequired,
+  setIngridient: PropTypes.func.isRequired,
 };
 
 BurgerIngredients.propTypes = {
-  showIngredientModal: PropTypes.func,
-  setIngridient: PropTypes.func,
-  type: PropTypes.string,
+  showIngredientModal: PropTypes.func.isRequired,
+  setIngridient: PropTypes.func.isRequired,
+  type: PropTypes.string.isRequired,
 };
 
 BurgerIngredientItem.propTypes = {
